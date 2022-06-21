@@ -1,0 +1,98 @@
+body{
+    margin: 0%;
+}
+.navbar{
+height: 40px;
+padding: 10px;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+padding: 1%;
+border-bottom: 1.5px solid rgb(214, 217, 218);
+}
+
+.menuandlogo{
+/* height: 60px; */
+    width: 15%;
+    display: flex;
+    align-items: center;
+    /* background-color: aqua; */
+    gap: 5px;
+
+}
+.burgerbutton{ 
+    padding: 0.7em;
+    border-radius: 50%;
+}
+.burgerbutton:hover{ 
+    background-color: rgba(217, 217, 220, 0.596); 
+}
+.textlogo{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+    padding-left: 1em;
+}
+.textlogo img{
+    height: 2.5em;
+}
+.textlogo p{
+    font-size: 1.6em;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(84, 84, 84);
+}
+.search{
+    width: 60%;
+    background-color: rgb(241,243,244);
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    /* margin: 10px; */
+    /* padding-left: 100px; */
+    padding-left: 1em;
+    gap: 1em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:rgb(94, 95, 96);
+}
+/* .search p{ font-size: 1.4em; } */
+
+.icons{
+    width: 15%;
+    display: flex;
+    justify-content: space-evenly;
+    color: rgb(84, 84, 84);
+    /* gap: 1%; */
+    margin: 1%;
+    /* background-color: aqua; */
+}
+.material-icons.md-24{
+    font-size: 28px;
+}
+.icons span{
+    height: max-content;
+    padding: 0.3em; 
+    border-radius: 50%; 
+}
+.icons span:hover{
+    background-color: rgba(217, 217, 220, 0.596); 
+    color: black;
+}
+.profilelogo{
+    width: 5%;
+    color: rgb(228, 91, 91);
+    display: flex;
+    justify-content: start;
+    /* background-color: rgb(232, 232, 232);  */
+}
+.profilelogo span{
+    /* padding: 1em; */
+    border-radius: 50%;
+    padding: 0.1em; 
+}
+.profilelogo span:hover{
+    color: rgb(255, 255, 255); 
+    background-image: linear-gradient(rgb(243, 118, 118), rgb(237, 102, 102));
+}
