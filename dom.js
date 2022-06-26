@@ -5,6 +5,30 @@ let delbuton=document.querySelector(".notes");  //selecting the entire notes div
 let addbtn=document.getElementById("addNote") //selecting the Add Note button
     addbtn.addEventListener('click',framesa)
 
+let icon=document.querySelector(".icons")
+icon.addEventListener('click',clickedOnIcon)
+function clickedOnIcon(e){
+console.log(e.target)
+if(e.target.classList.contains('refreshbtn')){
+    window.location.reload();
+}
+else if(e.target.classList.contains('viewbtn')){
+    if(e.target.innerText=='view_stream'){ //change to grid view
+      e.target.innerText='grid_view'
+      let notes=document.querySelector('.notes')
+      notes.style.gridTemplateColumns='1fr 1fr 1fr' ;
+
+    }
+    else{
+    e.target.innerText='view_stream'
+    let notes=document.querySelector('.notes')
+    notes.style.gridTemplateColumns='1fr';
+
+}
+
+}
+}
+
 function deleteNote(e){
    if( e.target.classList.contains('deleteNote'))
         if(confirm("Are you sure you want to delete this item?"))
