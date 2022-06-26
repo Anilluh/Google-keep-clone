@@ -41,6 +41,7 @@ function framesa(event) {
      let title=document.getElementById('title').value;
     let content=document.getElementById('content').value
 
+if(content!='')    {
     //erasing the entered value
     document.getElementById('title').value=''
     document.getElementById('content').value=''
@@ -55,6 +56,6 @@ function framesa(event) {
     newNote.querySelector('.deleteNote').id=`deleteNote${i}`
     newNote.style.display=''
     console.log(newNote)
-    document.querySelector('.notes').prepend(newNote)
+    document.querySelector('.notes').prepend(newNote)}
 
 };

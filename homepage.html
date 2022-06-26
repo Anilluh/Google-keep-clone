@@ -14,9 +14,9 @@
 <body>
     <div class="navbar">
         <div class="menuandlogo">
-                <span class="material-icons burgerbutton">
+                <button class="material-icons burgerbutton">
                     menu
-                    </span>
+                </button>
             <div class="textlogo">
                 <img src="Google_Keep_icon_(2020).svg.png" alt="googlekeepicon">
                 <p>Keep</p>
@@ -25,7 +25,6 @@
 
         <div class="search">
             <span class="material-icons">search</span>
-            <!-- <h2>Search</h2> -->
             <p>Search</p>
         </div>
 
@@ -52,12 +51,17 @@
   
 
 <div class="notes" id="noteDiv">
+
     <div class="note" id="individualnote">
             <h2 class="note-title">Welcome</h2>
-            <p>To add a note enter title and content and click the "Add Note" button </p>
+            <p>To add a note enter title and content and click the "Add Note" button and delete button to delete a note </p>
             <button class='material-icons deleteNote' id="deleteNode" value="true" >delete</button>
     </div>
-
+    <div class="note" id="individualnoteForotherfeatures">
+        <h2 class="note-title">Other features</h2>
+        <p>click on the refresh button to refresh the page and the view button to change views </p>
+        <button class='material-icons deleteNote' id="deleteNode" value="true" >delete</button>
+    </div>
     <!-- The following div #individualnote1 is solely made to not be deleted by the user and so the cloning of such a note can still work -->
     <div class="note" id="individualnote1" style="display:none ;">
             <h2 class="note-title">Title</h2>

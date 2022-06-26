@@ -24,9 +24,12 @@ border-bottom: 1.5px solid rgb(214, 217, 218);
 .burgerbutton{ 
     padding: 5%;
     border-radius: 50%;
+    border: none;
+    background-color: transparent;
 }
 .burgerbutton:hover{ 
     background-color: rgba(217, 217, 220, 0.596); 
+    cursor: pointer;
 }
 .textlogo{
     height: 100%;
@@ -45,6 +48,7 @@ border-bottom: 1.5px solid rgb(214, 217, 218);
     color: rgb(84, 84, 84);
 }
 .search{
+    /* order: 1; */
     width: 50%;
     background-color: rgb(241,243,244);
     border-radius: 13px;
@@ -136,12 +140,12 @@ border-bottom: 1.5px solid rgb(214, 217, 218);
     margin-bottom: 0.5%;
     border-radius: 7px;
     border: 0px solid;
-    background-color: rgb(244, 244, 244);
+    background-color: rgb(245, 245, 245);
     transition: 0.4s;
 }
 .form-content:focus{
     outline: 0;
-    background-color: rgb(217, 217, 217);
+    background-color: rgb(218, 218, 218);
     box-shadow:4px solid #000;
 }
 .form-btn{
