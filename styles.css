@@ -177,28 +177,40 @@ border-bottom: 1.5px solid rgb(214, 217, 218);
     padding-bottom: 5%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display: grid;
+    transition-duration: 400ms; /*time taken when mouse comes*/
+    /* align-content: start;                                 push the changes section to the bottom and the rest as this */
+    
 }
 .note:hover{
     box-shadow: 1px 1px 5px #888888,-1px -1px 5px #888888;
+    transition-duration: 400ms;  /*time taken when mouse comes*/
 }
 .note h2{
     /* height: 20%; */
     /* background-color: aqua; */
     margin-left: 5%;
     margin-right: 5%;
-    align-self: start;
 }
 .note p{
     /* height: 70%; */
     /* background-color: aqua; */
     margin-left: 5%;
     margin-right: 5%;
-    align-self: begin;
+    /* align-self: end; */
 }
-.note button{
-    /* height:10% */
-    justify-self: right;
+.changes{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    /* background-color: aqua; */
+    gap: 1%;
     align-self: end;
+}
+.deleteNote{
+    /* height:10% */
+    /* justify-self: right; */
+    /* align-self: end; */
     background-color: transparent;
     border: none; 
     color: rgb(84, 84, 84);
@@ -206,12 +218,35 @@ border-bottom: 1.5px solid rgb(214, 217, 218);
     padding: 1%; 
     border-radius: 50%; 
     margin-right: 3%;
-    
+    transition-duration: 700ms;
 } 
 
-.note button:hover{
+.deleteNote:hover{
     background-color: #fc3d3d;
     border-radius: 50%;
     color: rgb(255, 255, 255);
     cursor: pointer;
 }
+.theme{
+    /* justify-self: right; */
+    /* align-self: end; */
+    background-color: transparent;
+    border: none; 
+    color: rgb(84, 84, 84);
+    height: max-content;
+    padding: 1%; 
+    border-radius: 50%; 
+    margin-right: 3%;
+    transition-duration: 700ms;
+}
+.theme:hover{
+    background-color: #f07b15;
+    border-radius: 50%;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+.a {
+    color: gold;
+    text-shadow: -1px 1px 0px crimson, -2px 2px 0 crimson, -3px 3px 0 crimson,
+      -4px 4px 0 crimson, -5px 5px 0 crimson, -6px 6px 0 crimson;
+  }

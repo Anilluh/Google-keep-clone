@@ -1,45 +1,50 @@
 let i=1 //for variable id names
+
 let delbuton=document.querySelector(".notes");  //selecting the entire notes div
     delbuton.addEventListener('click',deleteNote) 
 
 let addbtn=document.getElementById("addNote") //selecting the Add Note button
-    addbtn.addEventListener('click',framesa)
+    addbtn.addEventListener('click',addbtnEventHandler)
 
 let icon=document.querySelector(".icons")
 icon.addEventListener('click',clickedOnIcon)
+
+newEvent('Other features','click on the refresh button to refresh the page and the view button to change views');
+newEvent('Welcome','To add a note enter title and content and click the "Add Note" button and delete button to delete a note ');
+
 function clickedOnIcon(e){
-console.log(e.target)
-if(e.target.classList.contains('refreshbtn')){
-    window.location.reload();
-}
-else if(e.target.classList.contains('viewbtn')){
-    if(e.target.innerText=='view_stream'){ //change to grid view
-      e.target.innerText='grid_view'
-      let notes=document.querySelector('.notes')
-      notes.style.gridTemplateColumns='1fr 1fr 1fr' ;
-
+    console.log(e.target)
+    if(e.target.classList.contains('refreshbtn')){
+        window.location.reload();
     }
-    else{
-    e.target.innerText='view_stream'
-    let notes=document.querySelector('.notes')
-    notes.style.gridTemplateColumns='1fr';
-
-}
-
-}
+    else if(e.target.classList.contains('viewbtn')){
+        if(e.target.innerText=='view_stream'){ //change to grid view
+            e.target.innerText='grid_view'
+            let notes=document.querySelector('.notes')
+            notes.style.gridTemplateColumns='1fr 1fr 1fr' ;
+        }
+        else{
+            e.target.innerText='view_stream'
+            let notes=document.querySelector('.notes')
+            notes.style.gridTemplateColumns='1fr';
+        }
+    }
 }
 
 function deleteNote(e){
    if( e.target.classList.contains('deleteNote'))
-        if(confirm("Are you sure you want to delete this item?"))
-            e.target.parentNode.remove()
+        // if(confirm("Are you sure you want to delete this item?"))
+            e.target.parentNode.parentNode.remove()                         // instead of changing this everytime there is a change in the structure of the notes div how can we make it generic to select the specific parent                      
 }
 
-function framesa(event) {
-    event.preventDefault() //to prevent default action when clicking on submit button
-    //saving the entered values
-     let title=document.getElementById('title').value;
-    let content=document.getElementById('content').value
+function addbtnEventHandler(e){         // instead of having this function can we have a single funtion to filter b/w js added and user added notes
+    e.preventDefault();
+    let title=document.getElementById('title').value;
+   let content=document.getElementById('content').value;
+    newEvent(title,content);
+}
+
+function newEvent(title,content) {
 
 if(content!='')    {
     //erasing the entered value

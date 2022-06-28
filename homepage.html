@@ -7,9 +7,10 @@
     <title>Google Keep</title>
     <link rel="stylesheet" href="styles.css">
 
-    <link rel="icon" type="image/x-icon" href="https://cdn.iconscout.com/icon/free/png-256/google-keep-3628806-3030083.png">
+    <link rel="icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Google_Keep_icon_%282015-2020%29.svg/1200px-Google_Keep_icon_%282015-2020%29.svg.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="https://kit.fontawesome.com/dce6f087d0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
     <div class="navbar">
@@ -52,25 +53,18 @@
 
 <div class="notes" id="noteDiv">
 
-    <div class="note" id="individualnote">
-            <h2 class="note-title">Welcome</h2>
-            <p>To add a note enter title and content and click the "Add Note" button and delete button to delete a note </p>
-            <button class='material-icons deleteNote' id="deleteNode" value="true" >delete</button>
-    </div>
-    <div class="note" id="individualnoteForotherfeatures">
-        <h2 class="note-title">Other features</h2>
-        <p>click on the refresh button to refresh the page and the view button to change views </p>
-        <button class='material-icons deleteNote' id="deleteNode" value="true" >delete</button>
-    </div>
-    <!-- The following div #individualnote1 is solely made to not be deleted by the user and so the cloning of such a note can still work -->
+       <!-- The following div #individualnote1 is solely made to not be deleted by the user and so the cloning of such a note can still work -->
     <div class="note" id="individualnote1" style="display:none ;">
             <h2 class="note-title">Title</h2>
             <p>Lorem2 ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
-            <button class='material-icons deleteNote' id="deleteNode" value="true" >delete</button>
+            
+            <div class="changes">
+                <button class="material-symbols-outlined theme">laundry</button>
+                <button class='material-icons deleteNote' id="deleteNode" value="true" >delete</button>
+            </div>
     </div>
 
 </div>
-
 </body>
 <script src="dom.js"></script>
 </html>

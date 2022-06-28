@@ -1,0 +1,19 @@
+{
+  "name": "google-keep-clone",
+  "version": "1.0.0",
+  "description": "A copy of Google's Note taking app",
+  "main": "homepage.js",
+  "scripts": {
+    "start": "node dom.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anilluh/Google-keep-clone.git"
+  },
+  "author": "Anilpreet Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anilluh/Google-keep-clone/issues"
+  },
+  "homepage": "https://github.com/Anilluh/Google-keep-clone#readme"
+}
