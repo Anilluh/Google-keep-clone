@@ -1,5 +1,78 @@
+:root{
+/*LIGHT MODE*/
+    --BgColor:rgb(245, 245, 245);
+    --navbarBorderBottom:rgb(214, 217, 218);
+
+    --burgerbutton: black;
+        --burgerbuttonHover:  rgba(217, 217, 220, 0.596);
+    --textlogocolor: rgb(84,84,84);
+    --searchbarBgcolor: rgb(223, 224, 224);
+        --searchbarTextColor: rgb(60, 60, 60);
+
+    --iconscolor:rgb(84, 84, 84);
+        --iconsHovercolor:rgba(217, 217, 220, 0.596);
+
+    --formTitlecolor:transparent;
+        --formTitleTextcolor:rgb(38, 38, 38);
+    --formContentcolor: rgb(245, 245, 245);
+        --formContentTextcolor:rgb(38, 38, 38);
+        --formContentFocuscolor: rgb(218, 218, 218);
+    --addNoteBgColor: rgb(240, 240, 240);
+        --addNoteTextColor:black;
+        --addNoteBgColorHover: rgb(227, 226, 226);
+
+    --NoteBgcolor:transparent;
+    --noteTextcolor:black;
+    --NoteHoverBgcolor:white;
+        --themebtncolor:rgb(84, 84, 84);
+            --themebgcolor:transparent;
+            --themeHoverBgcolor:#f07b15;
+        --deleteNotecolor:rgb(84, 84, 84);
+            --deleteNoteBgcolor:transparent;
+            --deleteNoteHoverBgcolor:#fc3d3d;
+
+/*DARK MODE*/
+    --BgcolorDARK:rgb(32,33,36);
+    --navbarBorderBottomDARK:rgb(88, 88, 90);
+
+    --burgerbuttonDARK: rgb(214, 213, 213);
+        --burgerbuttonHoverDARK:  rgb(113, 113, 113);
+    --textlogocolorDARK: rgb(210, 207, 207);
+    --searchbarBgcolorDARK: rgb(82,83,85);
+        --searchbarTextColorDARK: rgb(243, 243, 245);
+    
+    --iconscolorDARK:rgb(183, 179, 179);
+        --iconsHovercolorDARK:rgba(202, 202, 202, 0.596);
+
+    --formTitlecolorDARK:transparent;
+        --formTitleTextcolorDARK:rgb(210, 207, 207);
+    --formContentcolorDARK: rgb(56, 57, 58);
+        --formContentTextcolorDARK:rgb(210, 207, 207);
+        --formContentFocuscolorDARK: rgb(84, 84, 86);
+    --addNoteBgColorDARK: rgb(70, 69, 69);
+        --addNoteTextcolorDARK:white;
+        --addNoteBgColorHoverDARK: rgb(52, 51, 51);
+
+    --NoteBgcolorDARK:transparent;
+        --noteTextcolorDARK:white;
+        --NoteHoverBgcolorDARK:rgb(31, 31, 48);
+    --themebtncolorDARK:rgb(193, 193, 193);
+        --themebgcolorDARK:transparent;
+        --themeHoverBgcolorDARK:#f07b15;
+    --deleteNotecolorDARK:rgb(193, 193, 193);
+        --deleteNoteBgcolorDARK:transparent;
+        --deleteNoteHoverBgcolorDARK:#fc3d3d;
+
+}
+
+
+
 body{
     margin: 0%;
+    background-color: var(--BgColor);
+}
+body.dark{
+    background-color: var(--BgcolorDARK);
 }
 .navbar{
 height: 40px;
@@ -9,9 +82,13 @@ flex-direction: row;
 align-items: center;
 justify-content: space-between;
 padding: 1%;
-border-bottom: 1.5px solid rgb(214, 217, 218);
+border-bottom: 1.5px solid var(--navbarBorderBottom);
+background-color: var(--BgColor);
 }
-
+.navbar.dark{
+    background-color: var(--BgcolorDARK);
+    border-bottom: 1.5px solid var(--navbarBorderBottomDARK);
+}
 .menuandlogo{
 /* height: 60px; */
     width: 15%;
@@ -19,17 +96,25 @@ border-bottom: 1.5px solid rgb(214, 217, 218);
     align-items: center;
     /* background-color: aqua; */
     gap: 5px;
-
+    background-color: transparent;
 }
 .burgerbutton{ 
     padding: 5%;
     border-radius: 50%;
     border: none;
     background-color: transparent;
+    color:var(--burgerbutton);
+}
+.burgerbutton.dark{
+    color:var(--burgerbuttonDARK);
 }
 .burgerbutton:hover{ 
-    background-color: rgba(217, 217, 220, 0.596); 
+    background-color:var(--burgerbuttonHover); 
     cursor: pointer;
+}
+.burgerbutton.dark:hover{
+    background-color:var(--burgerbuttonHoverDARK);
+    color:var(--burgerbutton)
 }
 .textlogo{
     height: 100%;
@@ -38,6 +123,7 @@ border-bottom: 1.5px solid rgb(214, 217, 218);
     align-items: center;
     gap: 15%;
     /* padding-left:5%; */
+    background-color: transparent;
 }
 .textlogo img{
     height: 2.5em;
@@ -45,12 +131,16 @@ border-bottom: 1.5px solid rgb(214, 217, 218);
 .textlogo p{
     /* font-size: 1.6em; */
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: rgb(84, 84, 84);
+    color: var(--textlogocolor);
 }
+.textlogo.dark p{
+    color: var(--textlogocolorDARK);
+}
+
 .search{
     /* order: 1; */
     width: 50%;
-    background-color: rgb(241,243,244);
+    background-color: var(--searchbarBgcolor);
     border-radius: 13px;
     display: flex;
     align-items: center;
@@ -59,7 +149,11 @@ border-bottom: 1.5px solid rgb(214, 217, 218);
     padding-left: 1.5%;
     gap:2.5%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color:rgb(94, 95, 96);
+    color:var(--searchbarTextColor);
+}
+.search.dark{
+    background-color: var(--searchbarBgcolorDARK);
+    color:var(--searchbarTextColorDARK)
 }
 /* .search p{ font-size: 1.4em; } */
 
@@ -70,24 +164,30 @@ border-bottom: 1.5px solid rgb(214, 217, 218);
     gap: 1%;
     margin: 1%;
     /* background-color: aqua; */
+    /* background-color: transparent; */
 }
 .material-icons.md-24{
     font-size: 28px;
+    background-color: transparent;
 }
 .icons button{
-    color: rgb(84, 84, 84);
+    color: var(--iconscolor);
     height: max-content;
     padding: 5%; 
     border-radius: 50%; 
     border: 0px solid ;
-    background-color: rgb(255, 255, 255);
+}
+.icons.dark button{
+    color: var(--iconscolorDARK);
 }
 .icons button:hover{
-    background-color: rgba(217, 217, 220, 0.596); 
+    background-color: var(--iconsHovercolor); 
     color: black;
     cursor: pointer;
 }
-
+.icons.dark button:hover {
+    background-color: var(--iconsHovercolorDARK);
+}
 .profilelogo{
     width: 5%;
 }
@@ -126,9 +226,13 @@ border-bottom: 1.5px solid rgb(214, 217, 218);
    border-bottom: 3px solid rgb(193, 193, 193);
    /* color: rgb(255, 11, 11); */
    transition: 0.4s;
-   /* background-color: rgb(244, 244, 244); */
-   
+   background-color: var(--formTitlecolor);
+   color: var(--formTitleTextcolor);
 } 
+.form-title.dark{
+    background-color: var(--formTitlecolorDARK);
+    color: var(--formTitleTextcolorDARK);
+}
 .form-title:focus{
     outline: 0;
     border: 0px solid;
@@ -140,13 +244,23 @@ border-bottom: 1.5px solid rgb(214, 217, 218);
     margin-bottom: 0.5%;
     border-radius: 7px;
     border: 0px solid;
-    background-color: rgb(245, 245, 245);
+    background-color:var(--formContentcolor);
+    color:var(--formContentTextcolor);
     transition: 0.4s;
+
 }
+.form-content.dark{
+    background-color: var(--formContentcolorDARK);
+    color:var(--formContentTextcolorDARK);
+}
+
 .form-content:focus{
     outline: 0;
-    background-color: rgb(218, 218, 218);
+    background-color:var(--formContentFocuscolor);
     box-shadow:4px solid #000;
+}
+.form-content.dark:focus{
+    background-color: var(--formContentFocuscolorDARK);
 }
 .form-btn{
     width: 20%;    
@@ -156,13 +270,21 @@ border-bottom: 1.5px solid rgb(214, 217, 218);
     border: 0px solid #000;
     border-radius: 4px;
     font-family: "Cascadia Code",Consolas,Monaco,"Andale Mono","Ubuntu Mono",monospace;
-    background-color: rgb(240, 240, 240);
+    background-color:var(--addNoteBgColor);
+    color:var(--addNoteTextColor);
 }
+.form-btn.dark{
+    background-color: var(--addNoteBgColorDARK);
+    color: var(--addNoteTextcolorDARK);
+}
+
 .form-btn:hover{
-    background-color: rgb(227, 226, 226);
+    background-color:var(--addNoteBgColorHover);
     cursor: pointer;
 } 
-
+.form-btn.dark:hover{
+    background-color: var(--addNoteBgColorHoverDARK);
+}
 .notes{
     /* background-color: aqua; */
     display: grid;
@@ -171,7 +293,7 @@ border-bottom: 1.5px solid rgb(214, 217, 218);
     gap: 4px;
 }
 .note{
-    background-color: transparent;
+    background-color: var(--NoteBgcolor);
     border: 1px solid gray;
     border-radius: 6px;
     padding-bottom: 5%;
@@ -179,11 +301,20 @@ border-bottom: 1.5px solid rgb(214, 217, 218);
     display: grid;
     transition-duration: 400ms; /*time taken when mouse comes*/
     /* align-content: start;                                 push the changes section to the bottom and the rest as this */
+    color: var(--noteTextcolor);
     
+}
+.note.dark{
+    background-color: var(--NoteBgcolorDARK);
+    color: var(--noteTextcolorDARK);
 }
 .note:hover{
     box-shadow: 1px 1px 5px #888888,-1px -1px 5px #888888;
     transition-duration: 400ms;  /*time taken when mouse comes*/
+    background-color: var(--NoteHoverBgcolor);
+}
+.note.dark:hover{
+    background-color: var(--NoteHoverBgcolorDARK);
 }
 .note h2{
     /* height: 20%; */
@@ -211,42 +342,52 @@ border-bottom: 1.5px solid rgb(214, 217, 218);
     /* height:10% */
     /* justify-self: right; */
     /* align-self: end; */
-    background-color: transparent;
+    background-color: var(--deleteNoteBgcolor);
     border: none; 
-    color: rgb(84, 84, 84);
+    color: var(--deleteNotecolor);
     height: max-content;
     padding: 1%; 
     border-radius: 50%; 
     margin-right: 3%;
     transition-duration: 700ms;
 } 
+.deleteNote.dark{
+    background-color: var(--deleteNoteBgcolorDARK);
+    color: var(--deleteNotecolorDARK);
+}
 
 .deleteNote:hover{
-    background-color: #fc3d3d;
+    background-color:var(--deleteNoteHoverBgcolor);
     border-radius: 50%;
     color: rgb(255, 255, 255);
     cursor: pointer;
 }
+.deleteNote.dark:hover{
+    background-color: var(--deleteNoteHoverBgcolorDARK);
+}
 .theme{
     /* justify-self: right; */
     /* align-self: end; */
-    background-color: transparent;
+    background-color: var(--themebgcolor);
     border: none; 
-    color: rgb(84, 84, 84);
+    color: var(--themebtncolor);
     height: max-content;
     padding: 1%; 
     border-radius: 50%; 
     margin-right: 3%;
     transition-duration: 700ms;
 }
+.theme.dark{
+    background-color: var(--themebgcolorDARK);
+    color: var(--themebtncolorDARK);
+}
 .theme:hover{
-    background-color: #f07b15;
+    background-color:var(--themeHoverBgcolor);
     border-radius: 50%;
     color: rgb(255, 255, 255);
     cursor: pointer;
+    /* transform: scale(1.1); */
 }
-.a {
-    color: gold;
-    text-shadow: -1px 1px 0px crimson, -2px 2px 0 crimson, -3px 3px 0 crimson,
-      -4px 4px 0 crimson, -5px 5px 0 crimson, -6px 6px 0 crimson;
-  }
+.theme.dark:hover{
+    background-color: var(--themeHoverBgcolorDARK);
+}

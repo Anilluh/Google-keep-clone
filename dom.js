@@ -9,13 +9,21 @@ let addbtn=document.getElementById("addNote") //selecting the Add Note button
 let icon=document.querySelector(".icons")
 icon.addEventListener('click',clickedOnIcon)
 
-newEvent('Other features','click on the refresh button to refresh the page and the view button to change views');
-newEvent('Welcome','To add a note enter title and content and click the "Add Note" button and delete button to delete a note ');
+newEvent('Other features','click on the change theme button to change dark/light mode');
+// for(let i=0;i<1000;i++)
+newEvent('Welcome','To add a note enter title and content and click the "Add Note" button and to delete a note click on delete button in note ');
 
 function clickedOnIcon(e){
     console.log(e.target)
-    if(e.target.classList.contains('refreshbtn')){
-        window.location.reload();
+    if(e.target.classList.contains('changeTheme')){ 
+        if(e.target.innerText=='dark_mode'){ 
+            e.target.innerText='light_mode'
+            toggleDarkMode()
+        }
+        else{
+            e.target.innerText='dark_mode'
+            toggleDarkMode()
+        }
     }
     else if(e.target.classList.contains('viewbtn')){
         if(e.target.innerText=='view_stream'){ //change to grid view
@@ -31,10 +39,13 @@ function clickedOnIcon(e){
     }
 }
 
+
 function deleteNote(e){
-   if( e.target.classList.contains('deleteNote'))
-        // if(confirm("Are you sure you want to delete this item?"))
-            e.target.parentNode.parentNode.remove()                         // instead of changing this everytime there is a change in the structure of the notes div how can we make it generic to select the specific parent                      
+   if( e.target.classList.contains('deleteNote')){
+        // e.target.parentNode.parentNode.style.transition="all 1000ms";    // try to scale the note down in a transition while deleting
+        // e.target.parentNode.parentNode.style.transform="scale(0.4)";  
+
+        e.target.parentNode.parentNode.remove()   }                      // instead of changing this everytime there is a change in the structure of the notes div how can we make it generic to select the specific parent                      
 }
 
 function addbtnEventHandler(e){         // instead of having this function can we have a single funtion to filter b/w js added and user added notes
@@ -63,4 +74,21 @@ if(content!='')    {
     console.log(newNote)
     document.querySelector('.notes').prepend(newNote)}
 
-};
+}
+
+function toggleDarkMode(){
+    let arrayOfClasses=['body','navbar','burgerbutton','textlogo','search','icons','form-title','form-content','form-btn','note','deleteNote','theme']
+    for(let classItem of arrayOfClasses)
+    {
+        let items= document.querySelectorAll(`.${classItem}`)
+        // .classList.toggle('dark');
+        for(let item of items){
+            item.classList.toggle('dark')
+        }
+
+    }
+    // let vs=document.getElementsByClassName('body');
+    // vs[0].classList.toggle('dark');
+    // console.log(vs[0])
+    // console.log('change mode')
+}
