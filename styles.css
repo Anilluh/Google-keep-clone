@@ -22,17 +22,17 @@
         --addNoteBgColorHover: rgb(227, 226, 226);
 
     --NoteBgcolor:transparent;
-    --noteTextcolor:black;
-    --NoteHoverBgcolor:white;
-        --themebtncolor:rgb(84, 84, 84);
-            --themebgcolor:transparent;
-            --themeHoverBgcolor:#f07b15;
-        --deleteNotecolor:rgb(84, 84, 84);
-            --deleteNoteBgcolor:transparent;
-            --deleteNoteHoverBgcolor:#fc3d3d;
+        --noteTextcolor:black;
+        --NoteHoverBgcolor:rgb(235, 235, 235);
+            --themebtncolor:rgb(84, 84, 84);
+                --themebgcolor:transparent;
+                --themeHoverBgcolor:#f07b15;
+            --deleteNotecolor:rgb(84, 84, 84);
+                --deleteNoteBgcolor:transparent;
+                --deleteNoteHoverBgcolor:#fc3d3d;
 
 /*DARK MODE*/
-    --BgcolorDARK:rgb(32,33,36);
+    --BgcolorDARK:rgba(25, 24, 36, 0.637);
     --navbarBorderBottomDARK:rgb(88, 88, 90);
 
     --burgerbuttonDARK: rgb(214, 213, 213);
@@ -46,16 +46,16 @@
 
     --formTitlecolorDARK:transparent;
         --formTitleTextcolorDARK:rgb(210, 207, 207);
-    --formContentcolorDARK: rgb(56, 57, 58);
+    --formContentcolorDARK: rgba(56, 57, 58, 0.372);
         --formContentTextcolorDARK:rgb(210, 207, 207);
-        --formContentFocuscolorDARK: rgb(84, 84, 86);
-    --addNoteBgColorDARK: rgb(70, 69, 69);
+        --formContentFocuscolorDARK: rgba(40, 40, 41, 0.434);
+    --addNoteBgColorDARK: rgba(70, 69, 69, 0.844);
         --addNoteTextcolorDARK:white;
         --addNoteBgColorHoverDARK: rgb(52, 51, 51);
 
-    --NoteBgcolorDARK:transparent;
+    --NoteBgcolorDARK:rgba(0, 0, 0, 0.13);
         --noteTextcolorDARK:white;
-        --NoteHoverBgcolorDARK:rgb(31, 31, 48);
+        --NoteHoverBgcolorDARK:rgba(31, 31, 48, 0.604);
     --themebtncolorDARK:rgb(193, 193, 193);
         --themebgcolorDARK:transparent;
         --themeHoverBgcolorDARK:#f07b15;
@@ -69,10 +69,16 @@
 
 body{
     margin: 0%;
-    background-color: var(--BgColor);
+    background-color: var(--BgColor);   
 }
 body.dark{
-    background-color: var(--BgcolorDARK);
+    /* background-color: var(--BgcolorDARK); */
+    /* background: linear-gradient(to right,rgb(31, 1, 52),rgb(87, 5, 87)) no-repeat fixed; */
+    background-image: url(images/DarkBG2.webp);
+background-position: center center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
 }
 .navbar{
 height: 40px;
@@ -177,6 +183,7 @@ background-color: var(--BgColor);
     border-radius: 50%; 
     border: 0px solid ;
 }
+
 .icons.dark button{
     color: var(--iconscolorDARK);
 }
@@ -187,7 +194,10 @@ background-color: var(--BgColor);
 }
 .icons.dark button:hover {
     background-color: var(--iconsHovercolorDARK);
+    color: black;
+    cursor: pointer;
 }
+
 .profilelogo{
     width: 5%;
 }
@@ -272,6 +282,7 @@ background-color: var(--BgColor);
     font-family: "Cascadia Code",Consolas,Monaco,"Andale Mono","Ubuntu Mono",monospace;
     background-color:var(--addNoteBgColor);
     color:var(--addNoteTextColor);
+    transition: 0.4s;
 }
 .form-btn.dark{
     background-color: var(--addNoteBgColorDARK);
@@ -302,6 +313,8 @@ background-color: var(--BgColor);
     transition-duration: 400ms; /*time taken when mouse comes*/
     /* align-content: start;                                 push the changes section to the bottom and the rest as this */
     color: var(--noteTextcolor);
+
+    backdrop-filter:  blur(10px);
     
 }
 .note.dark{
@@ -314,9 +327,10 @@ background-color: var(--BgColor);
     background-color: var(--NoteHoverBgcolor);
 }
 .note.dark:hover{
-    background-color: var(--NoteHoverBgcolorDARK);
+    background-color: var(--NoteHoverBgcolorDARK) ;
+    /* backdrop-filter:  blur(10px); */
 }
-.note h2{
+.noteTitle{
     /* height: 20%; */
     /* background-color: aqua; */
     margin-left: 5%;
@@ -356,7 +370,7 @@ background-color: var(--BgColor);
     color: var(--deleteNotecolorDARK);
 }
 
-.deleteNote:hover{
+.deleteNote:hover {
     background-color:var(--deleteNoteHoverBgcolor);
     border-radius: 50%;
     color: rgb(255, 255, 255);

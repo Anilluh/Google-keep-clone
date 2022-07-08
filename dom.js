@@ -65,15 +65,14 @@ if(content!='')    {
     let notesection=document.getElementById("individualnote1")  //selecting a already made note to clone it
     let newNote=notesection.cloneNode('true')
 
-    newNote.querySelector('h2').innerText=title
-    newNote.querySelector('p').innerText=content
+    newNote.querySelector('.noteTitle').innerText=title
+    newNote.querySelector('.noteContent').innerText=content
 
     newNote.id=`indiviualnote${++i}`
     newNote.querySelector('.deleteNote').id=`deleteNote${i}`
     newNote.style.display=''
     console.log(newNote)
     document.querySelector('.notes').prepend(newNote)}
-
 }
 
 function toggleDarkMode(){
@@ -85,10 +84,5 @@ function toggleDarkMode(){
         for(let item of items){
             item.classList.toggle('dark')
         }
-
     }
-    // let vs=document.getElementsByClassName('body');
-    // vs[0].classList.toggle('dark');
-    // console.log(vs[0])
-    // console.log('change mode')
 }
